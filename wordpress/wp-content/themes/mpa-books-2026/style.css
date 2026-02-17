@@ -1,0 +1,276 @@
+/*
+Theme Name: MPA Books 2026
+Theme URI: https://example.com
+Author: MPA
+Description: Modernized series-to-books theme with preview and WooCommerce buy actions.
+Version: 0.2.0
+Requires at least: 6.6
+Tested up to: 6.6
+Requires PHP: 8.1
+Text Domain: mpa-books-2026
+*/
+
+:root {
+  --mpa-bg: #0f172a;
+  --mpa-panel: #111827;
+  --mpa-text: #e5e7eb;
+  --mpa-muted: #9ca3af;
+  --mpa-accent: #f59e0b;
+}
+
+body {
+  background: radial-gradient(circle at top, #1f2937, var(--mpa-bg));
+  color: var(--mpa-text);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+
+.mpa-site-header {
+  border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+  background: rgba(10, 17, 31, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.mpa-site-header__inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.mpa-site-brand {
+  color: var(--mpa-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mpa-primary-nav__list {
+  display: flex;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mpa-primary-nav__list a {
+  color: var(--mpa-text);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.mpa-primary-nav__list a:hover {
+  color: var(--mpa-accent);
+}
+
+.mpa-sidebar {
+  display: grid;
+  gap: 1rem;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.mpa-sidebar-section {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.mpa-sidebar-nav__list {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mpa-sidebar-nav__list a {
+  border-radius: 6px;
+  color: var(--mpa-text);
+  display: block;
+  padding: 0.35rem 0.5rem;
+  text-decoration: none;
+}
+
+.mpa-sidebar-nav__list a:hover,
+.mpa-sidebar-nav__list .current-menu-item > a,
+.mpa-sidebar-nav__list .current_page_item > a {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.mpa-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+}
+
+.mpa-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 260px 1fr;
+}
+
+.mpa-content {
+  min-width: 0;
+}
+
+.mpa-hero {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(17, 24, 39, 0.92));
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+}
+
+.mpa-hero h1 {
+  margin: 0 0 0.4rem;
+}
+
+.mpa-hero p {
+  color: var(--mpa-muted);
+  margin: 0;
+}
+
+.mpa-language-menu {
+}
+
+.mpa-language-menu__title {
+  margin: 0 0 0.75rem;
+}
+
+.mpa-language-menu__list {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mpa-language-menu__list a {
+  border-radius: 6px;
+  color: var(--mpa-text);
+  display: block;
+  padding: 0.35rem 0.5rem;
+  text-decoration: none;
+}
+
+.mpa-language-menu__list a.is-active,
+.mpa-language-menu__list a:hover {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.mpa-series-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.mpa-book-card {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.mpa-book-card__image {
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.mpa-book-card__formats {
+  color: var(--mpa-muted);
+  font-size: 0.875rem;
+}
+
+.mpa-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mpa-btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+}
+
+.mpa-btn--preview {
+  background: #1f2937;
+  border-color: #374151;
+  color: var(--mpa-text);
+}
+
+.mpa-btn--buy {
+  background: var(--mpa-accent);
+  color: #111827;
+}
+
+
+.mpa-genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.mpa-genre-list__item a {
+  align-items: center;
+  background: rgba(17, 24, 39, 0.86);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  color: var(--mpa-text);
+  display: inline-flex;
+  gap: 0.55rem;
+  justify-content: flex-start;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.mpa-genre-list__item a:hover {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.65);
+  transform: translateY(-1px);
+}
+
+.mpa-genre-list__name {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mpa-genre-list__count {
+  color: var(--mpa-muted);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+@media (max-width: 920px) {
+  .mpa-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mpa-sidebar {
+    position: static;
+  }
+
+  .mpa-primary-nav__list {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
