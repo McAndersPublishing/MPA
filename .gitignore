@@ -1,0 +1,5 @@
+# Build artifacts
+/dist/*.zip
+
+# Keep no-Linux fallback payload committed
+!/dist/*.zip.b64
